@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form</title>
+    <script type="text/javascript">
+    function sendmail()
+    {
+        var res = confirm("do you want to send the mail?")
+        if (res == true) {alert ("mail was send")}
+        else {promtMail();}
+    }
+    function promtMail()
+    {
+        var res2 = prompt("please enter a diffrent mail addreass to send to:", "")
+        alert("your mail was send to " + res2);
+    }
+    function minmax()
+    {
+        mini = (document.getElementById("mini").value);
+        maxi = (document.getElementById("maxi").value);
+        var tempnum = "";
+        for (var i = mini;i<=maxi;i++)
+        {
+            tempnum += i + "<br>";
+            document.getElementById("spanRes").innerHTML = tempnum;
+        }
+        
+    }
+    </script>
+</head>
+<body>
+    <form action="">
+    <h1>contact form</h1>
+        <br>First Name: <input type="text" size="25">
+        <br>Last Name: <input type="text" size="25">
+        <br>Email: <input type="text" size="25">
+        <br>Gender: <input type="radio" name="genderType" value="Male" checked/>Male
+                    <input type="radio" name="genderType" value="Female" />Female
+        <br>Subjet: <input type="text" size="25">
+        <br>content: <input type="textarea" rows="4" size="25">
+        <br><button type="submit" onclick="sendmail()">send</button>
+        <button type="reset">rest</button>
+    <br><br>
+
+    min: <input type="text" name="min" id="mini">
+    <br>max: <input type="text" name="max" id="maxi" onchange="minmax()"> 
+    <br> 
+    <span id="spanRes"></span>
+    </form>
+    <br><br><a href="index.html">Return to home page</a>
+</body>
+</html>
